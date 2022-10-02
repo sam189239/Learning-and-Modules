@@ -1,7 +1,7 @@
 import pickle
 from matplotlib.pyplot import clf
 import numpy as np
-import fastapi as FastAPI
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI(title="Predicting Wine Class")
@@ -21,10 +21,10 @@ class Wine(BaseModel):
     od280_od315_of_diluted_wines: float
     proline: float
 
-@app.on_event("Startup")
+@app.on_event("startup")
 def load_clf():
     # Load classifier from pickle file
-    with open("/app/wine.pkl", "rb") as file:
+    with open("wine.pkl", "rb") as file:
         global clf
         clf = pickle.load(file)
 

@@ -8,3 +8,12 @@
 
 
 Simple Web Application using FastAPI to illustrate MLOps
+
+To start: 
+uvicorn main:app --reload
+http://127.0.0.1:8000/docs
+
+For Dockerized version
+cd machine-learning-engineering-for-production-public\course4\week2-ungraded-labs\C4_W2_Lab_1_FastAPI_Docker\no-batch
+
+docker build -t mlepc4w2-ugl:no-batch .
